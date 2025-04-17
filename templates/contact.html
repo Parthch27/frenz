@@ -1,0 +1,753 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Contact Header -->
+<section class="contact-header-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-10 mx-auto text-center">
+                <h1 class="section-heading mb-3 neon-glow">Contact Us</h1>
+                <p class="lead glass-text">Get in touch with our team to discuss your project or inquire about our services.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Information & Form -->
+<section class="contact-main-section">
+    <div class="contact-particles"></div>
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-5">
+                <div class="contact-info-card" data-aos="fade-right">
+                    <h2 class="glowing-header mb-4">Let's Connect</h2>
+                    <p class="mb-4">Have questions about our services or want to discuss a potential project? Reach out to us using any of the methods below:</p>
+                    
+                    <div class="contact-items">
+                        <div class="contact-item" data-aos="fade-up" data-aos-delay="100">
+                            <div class="icon-container">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h5>Our Location</h5>
+                                <p>123 Business Avenue, Tech City, TC 12345</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item" data-aos="fade-up" data-aos-delay="200">
+                            <div class="icon-container">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="info-content">
+                                <h5>Email Us</h5>
+                                <p><a href="mailto:info@frenz.com" class="contact-link">info@frenz.com</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item" data-aos="fade-up" data-aos-delay="300">
+                            <div class="icon-container">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="info-content">
+                                <h5>Call Us</h5>
+                                <p><a href="tel:+11234567890" class="contact-link">+1 (123) 456-7890</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item" data-aos="fade-up" data-aos-delay="400">
+                            <div class="icon-container whatsapp-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </div>
+                            <div class="info-content">
+                                <h5>WhatsApp</h5>
+                                <p><a href="https://wa.me/1234567890" class="whatsapp-button" target="_blank">
+                                    <i class="fab fa-whatsapp me-2"></i> Chat on WhatsApp
+                                </a></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links mt-5" data-aos="fade-up" data-aos-delay="500">
+                        <h5 class="mb-3">Follow Us</h5>
+                        <div class="social-icons">
+                            <a href="#" class="social-icon" aria-label="Facebook">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="social-icon" aria-label="Twitter">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="social-icon" aria-label="LinkedIn">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                            <a href="#" class="social-icon" aria-label="Instagram">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-7">
+                <div class="contact-form-card" data-aos="fade-left">
+                    <h2 class="glowing-header mb-4">Send Us a Message</h2>
+                    <form id="contactForm">
+                        {% csrf_token %}
+                        <div class="form-floating mb-4">
+                            {{ form.name }}
+                            <label for="{{ form.name.id_for_label }}">Your Name</label>
+                            <div class="form-focus-line"></div>
+                        </div>
+                        <div class="form-floating mb-4">
+                            {{ form.email }}
+                            <label for="{{ form.email.id_for_label }}">Email Address</label>
+                            <div class="form-focus-line"></div>
+                        </div>
+                        <div class="form-floating mb-4">
+                            {{ form.subject }}
+                            <label for="{{ form.subject.id_for_label }}">Subject</label>
+                            <div class="form-focus-line"></div>
+                        </div>
+                        <div class="form-floating mb-4">
+                            {{ form.message }}
+                            <label for="{{ form.message.id_for_label }}">Message</label>
+                            <div class="form-focus-line"></div>
+                        </div>
+                        <button type="submit" class="btn-gradient btn-lg btn-submit">
+                            <span class="btn-text">Send Message</span>
+                            <span class="btn-icon"><i class="fas fa-paper-plane"></i></span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section class="faq-section">
+    <div class="container">
+        <h2 class="text-center mb-5 glowing-header">Frequently Asked Questions</h2>
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="accordion custom-accordion" id="faqAccordion">
+                    <div class="accordion-item" data-aos="fade-up" data-aos-delay="100">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                What services does Frenz offer?
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Frenz offers a comprehensive range of digital services including web development, app development, web design, UI/UX design, and product design. We work with businesses of all sizes to create custom digital solutions tailored to their specific needs.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item" data-aos="fade-up" data-aos-delay="200">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                How much does a typical project cost?
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Project costs vary depending on the scope, complexity, and specific requirements. We provide customized quotes after understanding your project needs. Contact us for a free consultation and estimate for your project.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item" data-aos="fade-up" data-aos-delay="300">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                What is your project timeline?
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Project timelines depend on the scope and complexity of each project. Small to medium-sized websites typically take 4-8 weeks, while more complex web applications may take 2-6 months. We'll provide a detailed timeline during our project planning phase.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item" data-aos="fade-up" data-aos-delay="400">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                Do you provide ongoing support after launch?
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                Yes, we offer ongoing support and maintenance packages to ensure your digital product continues to function optimally. We can provide updates, security patches, content updates, and technical support based on your needs.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Contact Page Styles */
+.contact-header-section {
+    padding-top: 180px;
+    padding-bottom: 100px;
+    background: linear-gradient(135deg, var(--jet-black), var(--dark-charcoal));
+    position: relative;
+    overflow: hidden;
+}
+
+.contact-header-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(22, 199, 154, 0.05) 0%, rgba(19, 138, 114, 0.05) 100%);
+    opacity: 0.8;
+}
+
+.contact-header-section .neon-glow {
+    text-shadow: 0 0 10px rgba(22, 199, 154, 0.7), 
+                 0 0 20px rgba(22, 199, 154, 0.5), 
+                 0 0 30px rgba(22, 199, 154, 0.3);
+    color: #fff;
+    font-weight: 800;
+    background: linear-gradient(to right, #fff, var(--bright-teal), #fff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px rgba(22, 199, 154, 0.7), 
+                     0 0 20px rgba(22, 199, 154, 0.5), 
+                     0 0 30px rgba(22, 199, 154, 0.3);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(22, 199, 154, 0.9), 
+                     0 0 30px rgba(22, 199, 154, 0.7), 
+                     0 0 40px rgba(22, 199, 154, 0.5);
+    }
+}
+
+.glass-text {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-main-section {
+    padding: 100px 0;
+    background: var(--bg-primary);
+    position: relative;
+    z-index: 1;
+}
+
+.contact-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.contact-info-card, .contact-form-card {
+    padding: 40px;
+    border-radius: 20px;
+    background: var(--card-bg);
+    box-shadow: var(--card-shadow);
+    height: 100%;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(22, 199, 154, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.contact-info-card:hover, .contact-form-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--neon-glow);
+}
+
+.glowing-header {
+    color: var(--bright-teal);
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.contact-items {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+    transform: translateX(10px);
+}
+
+.icon-container {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--bright-teal), var(--deep-sea));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.25rem;
+    box-shadow: 0 5px 15px rgba(22, 199, 154, 0.3);
+    transition: all 0.3s ease;
+}
+
+.whatsapp-icon {
+    background: linear-gradient(135deg, #25D366, #128C7E);
+}
+
+.contact-item:hover .icon-container {
+    transform: rotateY(360deg);
+    box-shadow: 0 5px 20px rgba(22, 199, 154, 0.5);
+}
+
+.info-content h5 {
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: var(--text-heading);
+}
+
+.info-content p {
+    margin-bottom: 0;
+    color: var(--text-body);
+}
+
+.contact-link {
+    color: var(--text-body);
+    transition: all 0.3s ease;
+    text-decoration: none;
+    position: relative;
+}
+
+.contact-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--bright-teal);
+    transition: all 0.3s ease;
+}
+
+.contact-link:hover {
+    color: var(--bright-teal);
+}
+
+.contact-link:hover::after {
+    width: 100%;
+}
+
+.whatsapp-button {
+    display: inline-flex;
+    align-items: center;
+    background: linear-gradient(135deg, #25D366, #128C7E);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.3);
+}
+
+.whatsapp-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+    color: white;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--card-bg-alt);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-heading);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-icon:hover {
+    transform: translateY(-5px);
+    color: white;
+}
+
+.social-icon:nth-child(1):hover {
+    background: #1877F2;
+    box-shadow: 0 5px 15px rgba(24, 119, 242, 0.4);
+}
+
+.social-icon:nth-child(2):hover {
+    background: #1DA1F2;
+    box-shadow: 0 5px 15px rgba(29, 161, 242, 0.4);
+}
+
+.social-icon:nth-child(3):hover {
+    background: #0A66C2;
+    box-shadow: 0 5px 15px rgba(10, 102, 194, 0.4);
+}
+
+.social-icon:nth-child(4):hover {
+    background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+    box-shadow: 0 5px 15px rgba(225, 48, 108, 0.4);
+}
+
+/* Form Styling */
+.form-floating .form-control {
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    border-bottom: 1px solid rgba(22, 199, 154, 0.3);
+    color: var(--text-body);
+    height: calc(3.5rem + 2px);
+    padding: 1.625rem 0.75rem 0.625rem;
+    box-shadow: none !important;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.form-floating > label {
+    color: var(--text-muted);
+}
+
+.form-floating textarea.form-control {
+    height: 120px;
+    resize: none;
+}
+
+.form-floating .form-control:focus {
+    background: rgba(22, 199, 154, 0.05);
+    box-shadow: none;
+    border-color: var(--bright-teal);
+}
+
+.form-focus-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--bright-teal);
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.form-floating .form-control:focus ~ .form-focus-line {
+    width: 100%;
+}
+
+.btn-gradient {
+    background: linear-gradient(135deg, var(--bright-teal), var(--deep-sea));
+    border: none;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(22, 199, 154, 0.3);
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-gradient:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(22, 199, 154, 0.4);
+}
+
+.btn-gradient:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: all 0.6s ease;
+}
+
+.btn-gradient:hover:before {
+    left: 100%;
+}
+
+.btn-icon {
+    display: inline-flex;
+    transition: all 0.3s ease;
+}
+
+.btn-gradient:hover .btn-icon {
+    transform: translateX(5px);
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, rgba(43, 43, 43, 0.8) 0%, rgba(0, 0, 0, 0.9) 100%);
+    position: relative;
+}
+
+.faq-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="none" width="100" height="100"/><path d="M0,0L100,100" stroke="rgba(22, 199, 154, 0.07)" stroke-width="0.5"/><path d="M100,0L0,100" stroke="rgba(22, 199, 154, 0.07)" stroke-width="0.5"/></svg>');
+    opacity: 0.5;
+}
+
+.custom-accordion .accordion-item {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(22, 199, 154, 0.1);
+    margin-bottom: 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.custom-accordion .accordion-item:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.custom-accordion .accordion-button {
+    background: rgba(43, 43, 43, 0.5);
+    color: var(--text-heading);
+    font-weight: 600;
+    border: none;
+    padding: 20px 25px;
+    box-shadow: none;
+}
+
+.custom-accordion .accordion-button:not(.collapsed) {
+    background: rgba(22, 199, 154, 0.1);
+    color: var(--bright-teal);
+}
+
+.custom-accordion .accordion-button:focus {
+    box-shadow: none;
+    border-color: rgba(22, 199, 154, 0.2);
+}
+
+.custom-accordion .accordion-button::after {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2316C79A'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+.custom-accordion .accordion-body {
+    background: rgba(0, 0, 0, 0.3);
+    color: var(--text-body);
+    padding: 20px 25px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Generate particles for contact section
+    const contactParticles = document.querySelector('.contact-particles');
+    if (contactParticles) {
+        for (let i = 0; i < 50; i++) {
+            let particle = document.createElement('div');
+            particle.classList.add('particle');
+            
+            // Random size between 2-6px
+            let size = Math.random() * 4 + 2;
+            particle.style.width = size + 'px';
+            particle.style.height = size + 'px';
+            
+            // Random position
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = Math.random() * 100 + '%';
+            
+            // Random animation duration between 15-25s
+            let duration = Math.random() * 10 + 15;
+            particle.style.animation = `float ${duration}s linear infinite`;
+            
+            // Random animation delay
+            particle.style.animationDelay = (Math.random() * 5) + 's';
+            
+            // Random color - teal with varying opacity
+            let opacity = Math.random() * 0.3 + 0.1;
+            particle.style.backgroundColor = `rgba(22, 199, 154, ${opacity})`;
+            
+            contactParticles.appendChild(particle);
+        }
+    }
+    
+    // Add ripple effect to buttons
+    const buttons = document.querySelectorAll('button, .btn-gradient');
+    buttons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            const ripple = document.createElement('span');
+            ripple.classList.add('ripple');
+            this.appendChild(ripple);
+            
+            const x = e.clientX - e.target.getBoundingClientRect().left;
+            const y = e.clientY - e.target.getBoundingClientRect().top;
+            
+            ripple.style.left = `${x}px`;
+            ripple.style.top = `${y}px`;
+            
+            setTimeout(() => {
+                ripple.remove();
+            }, 800);
+        });
+    });
+    
+    // Add focus animation to form inputs
+    const formInputs = document.querySelectorAll('.form-control');
+    formInputs.forEach(input => {
+        input.addEventListener('focus', function() {
+            this.parentElement.classList.add('focused');
+        });
+        
+        input.addEventListener('blur', function() {
+            this.parentElement.classList.remove('focused');
+        });
+    });
+    
+    // Contact form handling
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulate form submission success
+            const button = this.querySelector('.btn-submit');
+            const originalText = button.innerHTML;
+            
+            button.disabled = true;
+            button.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Sending...';
+            
+            setTimeout(() => {
+                // This would be replaced with actual form submission logic
+                Swal.fire({
+                    title: 'Message Sent!',
+                    text: 'We will get back to you shortly.',
+                    icon: 'success',
+                    background: 'rgba(43, 43, 43, 0.9)',
+                    color: '#fff',
+                    confirmButtonColor: '#16C79A'
+                });
+                
+                button.disabled = false;
+                button.innerHTML = originalText;
+                this.reset();
+            }, 1500);
+        });
+    }
+});
+</script>
+
+<style>
+/* Particle animation for contact section */
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.5;
+    z-index: -1;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) translateX(0);
+    }
+    25% {
+        transform: translateY(-20px) translateX(10px);
+    }
+    50% {
+        transform: translateY(0) translateX(20px);
+    }
+    75% {
+        transform: translateY(20px) translateX(10px);
+    }
+    100% {
+        transform: translateY(0) translateX(0);
+    }
+}
+
+.form-floating {
+    position: relative;
+}
+
+.focused .form-focus-line {
+    width: 100%;
+}
+
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.4);
+    transform: scale(0);
+    animation: ripple 0.8s linear;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* Add responsiveness */
+@media (max-width: 768px) {
+    .contact-header-section {
+        padding-top: 150px;
+        padding-bottom: 70px;
+    }
+    
+    .contact-info-card, .contact-form-card {
+        padding: 30px;
+    }
+    
+    .contact-item {
+        gap: 15px;
+    }
+    
+    .icon-container {
+        width: 45px;
+        height: 45px;
+        min-width: 45px;
+        font-size: 1rem;
+    }
+}
+</style>
+{% endblock %}

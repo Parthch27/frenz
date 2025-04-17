@@ -1,0 +1,320 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Team Member Hero Section -->
+<section class="hero-section team-hero">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6" data-aos="fade-right">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{% url 'about' %}">About</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">{{ member.name }}</li>
+                    </ol>
+                </nav>
+                <h1 class="display-4 fw-bold mb-2">{{ member.name }}</h1>
+                <h2 class="text-gradient fs-3 mb-4">{{ member.position }}</h2>
+                <p class="lead">{{ member.bio }}</p>
+                <div class="social-links mt-4">
+                    {% if member.email %}
+                    <a href="mailto:{{ member.email }}" aria-label="Email" class="me-3" target="_blank"><i class="fas fa-envelope"></i></a>
+                    {% endif %}
+                    {% if member.linkedin %}
+                    <a href="{{ member.linkedin }}" aria-label="LinkedIn" class="me-3" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    {% endif %}
+                    {% if member.github %}
+                    <a href="{{ member.github }}" aria-label="GitHub" class="me-3" target="_blank"><i class="fab fa-github"></i></a>
+                    {% endif %}
+                    {% if member.twitter %}
+                    <a href="{{ member.twitter }}" aria-label="Twitter" class="me-3" target="_blank"><i class="fab fa-twitter"></i></a>
+                    {% endif %}
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="team-image-wrapper-large">
+                    {% if member.image %}
+                    <img src="{{ member.image.url }}" alt="{{ member.name }}" class="img-fluid team-img-large">
+                    {% else %}
+                    <div class="team-img-placeholder-large">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hero-particles" id="teamParticles"></div>
+</section>
+
+<!-- Skills & Experience Section -->
+<section class="section skills-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6" data-aos="fade-right">
+                <div class="card glass-card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title mb-4">Skills & Expertise</h3>
+                        
+                        {% if skills %}
+                            <div class="skills-tags">
+                                {% for skill in skills %}
+                                <span class="skill-tag">{{ skill }}</span>
+                                {% endfor %}
+                            </div>
+                        {% else %}
+                            <p class="text-muted">Skills information coming soon.</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <div class="card glass-card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title mb-4">Experience</h3>
+                        <div class="experience-info">
+                            <div class="d-flex align-items-center mb-4">
+                                <div class="experience-icon">
+                                    <i class="fas fa-briefcase"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h4 class="mb-1">Current Role</h4>
+                                    <p class="mb-0">{{ member.position }} at Frenz</p>
+                                </div>
+                            </div>
+                            
+                            <div class="d-flex align-items-center">
+                                <div class="experience-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h4 class="mb-1">Years of Experience</h4>
+                                    <p class="mb-0">{{ member.experience_years }} years in the industry</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Education & Personal Contact Section -->
+        <div class="row mt-4">
+            <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
+                <div class="card glass-card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title mb-4">Education</h3>
+                        <div class="education-info">
+                            <div class="d-flex align-items-start mb-3">
+                                <div class="experience-icon">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div class="ms-3">
+                                    {% if member.education %}
+                                        <div class="education-content">
+                                            {{ member.education|linebreaks }}
+                                        </div>
+                                    {% else %}
+                                        <p class="text-muted">Education information coming soon.</p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left" data-aos-delay="100">
+                <div class="card glass-card h-100">
+                    <div class="card-body">
+                        <h3 class="card-title mb-4">Contact Details</h3>
+                        <div class="contact-info">
+                            {% if member.personal_contact %}
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="experience-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h4 class="mb-1">Personal Contact</h4>
+                                    <p class="mb-0">{{ member.personal_contact }}</p>
+                                </div>
+                            </div>
+                            {% endif %}
+                            
+                            {% if member.email %}
+                            <div class="d-flex align-items-center">
+                                <div class="experience-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h4 class="mb-1">Email</h4>
+                                    <p class="mb-0">{{ member.email }}</p>
+                                </div>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- GitHub Profile Section -->
+        {% if github_data %}
+        <div class="row mt-4">
+            <div class="col-12" data-aos="fade-up" data-aos-delay="200">
+                <div class="card glass-card github-card">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="github-icon me-3">
+                                <i class="fab fa-github fa-2x"></i>
+                            </div>
+                            <h3 class="card-title mb-0 github-card-title">GitHub Profile</h3>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <div class="github-profile">
+                                    <div class="github-avatar mb-3">
+                                        <img src="{{ github_data.profile.avatar_url }}" alt="{{ github_data.profile.name }}" class="img-fluid rounded-circle">
+                                    </div>
+                                    <h4 class="github-name">{{ github_data.profile.name }}</h4>
+                                    <p class="github-username">@{{ github_data.profile.login }}</p>
+                                    {% if github_data.profile.bio %}
+                                    <p class="github-bio">{{ github_data.profile.bio }}</p>
+                                    {% endif %}
+                                    <div class="github-stats">
+                                        <div class="row text-center">
+                                            <div class="col-4">
+                                                <div class="stat-item">
+                                                    <h5>{{ github_data.profile.public_repos }}</h5>
+                                                    <p>Repos</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="stat-item">
+                                                    <h5>{{ github_data.profile.followers }}</h5>
+                                                    <p>Followers</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-4">
+                                                <div class="stat-item">
+                                                    <h5>{{ github_data.profile.following }}</h5>
+                                                    <p>Following</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="mt-3 text-center">
+                                        <a href="{{ github_data.profile.html_url }}" class="btn btn-outline-light btn-sm" target="_blank">
+                                            <i class="fab fa-github me-1"></i> View Profile
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <h4 class="mb-3 github-repos-title">Recent Repositories</h4>
+                                <div class="github-repos">
+                                    {% for repo in github_data.repositories %}
+                                    <div class="repo-item">
+                                        <h5 class="repo-title">
+                                            <a href="{{ repo.html_url }}" target="_blank">{{ repo.name }}</a>
+                                            {% if repo.fork %}
+                                            <span class="badge bg-secondary ms-2">Fork</span>
+                                            {% endif %}
+                                        </h5>
+                                        {% if repo.description %}
+                                        <p class="repo-description">{{ repo.description }}</p>
+                                        {% endif %}
+                                        <div class="repo-meta">
+                                            {% if repo.language %}
+                                            <span class="me-3">
+                                                <i class="fas fa-code me-1"></i> {{ repo.language }}
+                                            </span>
+                                            {% endif %}
+                                            <span class="me-3">
+                                                <i class="fas fa-star me-1"></i> {{ repo.stargazers_count }}
+                                            </span>
+                                            <span>
+                                                <i class="fas fa-code-branch me-1"></i> {{ repo.forks_count }}
+                                            </span>
+                                        </div>
+                                    </div>
+                                    {% empty %}
+                                    <p class="text-muted">No public repositories found.</p>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+<!-- Team Highlights Section -->
+<section class="section team-highlights-section">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center" data-aos="fade-up">
+                <h2 class="section-title">Meet Our <span class="text-gradient">Team</span></h2>
+                <div class="section-line"></div>
+                <p class="section-subtitle">The talented people behind our success</p>
+            </div>
+        </div>
+        
+        <div class="row">
+            {% if other_members %}
+                {% for other_member in other_members %}
+                <div class="col-lg-4 col-md-6 mb-4" data-aos="fade-up" data-aos-delay="{{ forloop.counter|add:"100" }}">
+                    <div class="team-card">
+                        <div class="team-img-wrapper">
+                            {% if other_member.image %}
+                            <img src="{{ other_member.image.url }}" alt="{{ other_member.name }}" class="img-fluid team-img">
+                            {% else %}
+                            <div class="team-img-placeholder">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            {% endif %}
+                        </div>
+                        <div class="team-info">
+                            <h4>{{ other_member.name }}</h4>
+                            <p class="position">{{ other_member.position }}</p>
+                            <p class="bio">{{ other_member.bio|truncatechars:100 }}</p>
+                            <a href="{% url 'team_member_detail' other_member.slug %}" class="btn btn-outline-light btn-sm mt-2">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section full-width-cta">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="cta-content text-center" data-aos="zoom-in">
+                    <h1 class="cta-heading">Ready to start your project with us?</h1>
+                    <p class="cta-subheading">Let's create something amazing together.</p>
+                    <a href="{% url 'contact' %}" class="btn btn-gradient btn-lg cta-button">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+<!-- JavaScript for Particles -->
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Initialize particles for the hero section
+        if (typeof generateParticlesForSection === 'function') {
+            generateParticlesForSection('#teamParticles', 50);
+        }
+    });
+</script>
+{% endblock %}

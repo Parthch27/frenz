@@ -1,0 +1,49 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background with gradient -->
+  <defs>
+    <linearGradient id="teamGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#000000" />
+      <stop offset="100%" stop-color="#2B2B2B" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#16C79A" />
+      <stop offset="100%" stop-color="#138A72" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Main background -->
+  <rect width="600" height="400" fill="url(#teamGradient)" rx="20" ry="20" />
+  
+  <!-- Abstract design elements -->
+  <circle cx="100" cy="300" r="60" fill="none" stroke="url(#accentGradient)" stroke-width="3" opacity="0.3" />
+  <circle cx="500" cy="100" r="80" fill="none" stroke="url(#accentGradient)" stroke-width="2" opacity="0.2" />
+  <path d="M50,50 L100,100 L150,50 L200,100" stroke="#16C79A" stroke-width="3" fill="none" opacity="0.3" />
+  <path d="M400,300 L450,350 L500,300 L550,350" stroke="#16C79A" stroke-width="3" fill="none" opacity="0.3" />
+  
+  <!-- Team silhouettes -->
+  <!-- Person 1 (Left) -->
+  <circle cx="180" cy="180" r="50" fill="#333" />
+  <rect x="165" y="240" width="30" height="60" fill="#333" rx="5" ry="5" />
+  <circle cx="180" cy="160" r="25" fill="#444" />
+  
+  <!-- Person 2 (Middle) -->
+  <circle cx="300" cy="160" r="60" fill="#333" />
+  <rect x="280" y="230" width="40" height="70" fill="#333" rx="5" ry="5" />
+  <circle cx="300" cy="135" r="30" fill="#444" />
+  
+  <!-- Person 3 (Right) -->
+  <circle cx="420" cy="180" r="50" fill="#333" />
+  <rect x="405" y="240" width="30" height="60" fill="#333" rx="5" ry="5" />
+  <circle cx="420" cy="160" r="25" fill="#444" />
+  
+  <!-- Connected dots animation effect -->
+  <line x1="190" y1="170" x2="280" y2="140" stroke="#16C79A" stroke-width="2" />
+  <line x1="320" y1="140" x2="410" y2="170" stroke="#16C79A" stroke-width="2" />
+  <circle cx="190" cy="170" r="5" fill="#16C79A" />
+  <circle cx="280" cy="140" r="5" fill="#16C79A" />
+  <circle cx="320" cy="140" r="5" fill="#16C79A" />
+  <circle cx="410" cy="170" r="5" fill="#16C79A" />
+  
+  <!-- Text element -->
+  <text x="300" y="350" font-family="Arial, sans-serif" font-size="24" fill="#16C79A" text-anchor="middle" font-weight="bold">Our Team</text>
+</svg>

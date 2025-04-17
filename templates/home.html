@@ -1,0 +1,557 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero animated-gradient">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6 hero-content">
+                <h1 class="hero-title display-3 mb-4" data-aos="fade-up">
+                    <span class="animated-heading">Innovative</span>
+                    <div class="sliding-text-container">
+                        <span class="typed-text"></span>
+                        <span class="typed-cursor">|</span>
+                    </div>
+                </h1>
+                <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">We create cutting-edge digital solutions that empower businesses to thrive in the modern world. Our expertise combines technology and creativity to deliver extraordinary results.</p>
+                <div class="d-flex flex-wrap gap-3 hero-btn" data-aos="fade-up" data-aos-delay="400">
+                    <a href="{% url 'projects' %}" class="btn btn-primary btn-lg">View Our Work</a>
+                    <a href="{% url 'contact' %}" class="btn btn-outline-light btn-lg">Contact Us</a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center" data-aos="fade-left" data-aos-delay="300">
+                <div class="hero-image-container">
+                    <div class="tech-circle tech-circle-1"></div>
+                    <div class="tech-circle tech-circle-2"></div>
+                    <div class="tech-circle tech-circle-3"></div>
+                    <div class="innovation-graphic">
+                        <div class="innovation-icon-container">
+                            <i class="fas fa-lightbulb main-icon"></i>
+                            <i class="fab fa-react floating-icon floating-icon-1"></i>
+                            <i class="fab fa-python floating-icon floating-icon-2"></i>
+                            <i class="fab fa-js-square floating-icon floating-icon-3"></i>
+                            <i class="fab fa-android floating-icon floating-icon-4"></i>
+                            <i class="fab fa-html5 floating-icon floating-icon-5"></i>
+                        </div>
+                        <div class="innovation-glow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Us Section -->
+<section class="py-5">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6" data-aos="fade-right">
+                <div class="glass-card p-4 position-relative">
+                    <div class="d-flex flex-column gap-4">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="about-icon-box glow-effect">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-1">10+ Years Experience</h4>
+                                <p class="mb-0">Creating digital solutions for our clients</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="about-icon-box glow-effect">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-1">200+ Projects</h4>
+                                <p class="mb-0">Successfully delivered to satisfied clients</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="about-icon-box glow-effect">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div>
+                                <h4 class="mb-1">Team of Experts</h4>
+                                <p class="mb-0">Skilled professionals in development and design</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <h2 class="section-heading mb-4">About Frenz</h2>
+                <p class="lead mb-4">At Frenz, we believe in transforming ideas into functional and beautiful digital solutions that drive business growth.</p>
+                <p>Founded with a mission to bridge the gap between technology and business needs, we've helped numerous clients achieve their digital transformation goals. Our approach is collaborative, innovative, and results-driven.</p>
+                <p>We're committed to staying at the forefront of technology trends, ensuring our clients receive cutting-edge solutions that give them a competitive edge in today's fast-paced digital landscape.</p>
+                <a href="{% url 'services' %}" class="btn btn-primary mt-3">Discover Our Services</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section class="py-5 features-section">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h2 class="section-heading" data-aos="fade-up">Why Choose Us</h2>
+                <p class="lead" data-aos="fade-up" data-aos-delay="100">We combine technical expertise with creative thinking to deliver solutions that exceed expectations.</p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="card feature-card h-100">
+                    <div class="card-body p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-rocket"></i>
+                        </div>
+                        <h4 class="card-title mb-3">Innovative Solutions</h4>
+                        <p class="card-text">We leverage the latest technologies to create forward-thinking solutions that keep you ahead of the competition and ready for the future.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="card feature-card h-100">
+                    <div class="card-body p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h4 class="card-title mb-3">Expert Team</h4>
+                        <p class="card-text">Our talented professionals bring years of experience and deep expertise to every project, delivering exceptional results with precision and creativity.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="card feature-card h-100">
+                    <div class="card-body p-4">
+                        <div class="feature-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h4 class="card-title mb-3">Dedicated Support</h4>
+                        <p class="card-text">We're committed to your success, providing attentive support throughout the project lifecycle and beyond to ensure your satisfaction.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="py-5 services-home-section">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h2 class="section-heading" data-aos="fade-up">Our Services</h2>
+                <p class="lead" data-aos="fade-up" data-aos-delay="100">Comprehensive solutions tailored to meet your digital needs.</p>
+            </div>
+        </div>
+        <div class="row g-4">
+            {% for service in services %}
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="{{ forloop.counter|add:'100' }}">
+                <div class="card service-card h-100">
+                    <div class="card-body p-4">
+                        <div class="service-icon">
+                            <i class="{{ service.icon_class }}"></i>
+                        </div>
+                        <h4 class="service-title">{{ service.title }}</h4>
+                        <p class="service-text">{{ service.description|truncatewords:25 }}</p>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-12 text-center">
+                <p>Our services will be available soon.</p>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="text-center mt-5" data-aos="fade-up">
+            <a href="{% url 'services' %}" class="btn btn-primary btn-lg">View All Services</a>
+        </div>
+    </div>
+</section>
+
+<!-- Featured Projects Section -->
+<section class="py-5 projects-home-section">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h2 class="section-heading" data-aos="fade-up">Featured Projects</h2>
+                <p class="lead" data-aos="fade-up" data-aos-delay="100">Explore some of our recent work and innovative solutions.</p>
+            </div>
+        </div>
+        <div class="row g-4">
+            {% for project in projects %}
+            <div class="col-md-4 project-grid-item">
+                <div class="card project-card h-100">
+                    {% if project.image %}
+                    <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }}">
+                    {% else %}
+                    <div class="bg-dark p-5 text-center" style="height: 220px;">
+                        <i class="fas fa-code fa-3x" style="color: var(--bright-teal); margin-top: 70px;"></i>
+                    </div>
+                    {% endif %}
+                    <div class="card-body p-4">
+                        <h5 class="card-title fw-bold">{{ project.title }}</h5>
+                        <p class="card-text">{{ project.description|truncatewords:15 }}</p>
+                        <div class="mb-3 project-tech">
+                            {% for tech in project.get_technologies_list %}
+                            <span class="tech-badge">{{ tech }}</span>
+                            {% endfor %}
+                        </div>
+                        <a href="{% url 'project_detail' project.slug %}" class="project-link">
+                            View Project <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-12 text-center">
+                <div class="empty-projects-container">
+                    <i class="fas fa-folder-open fa-4x mb-3" style="color: var(--bright-teal);"></i>
+                    <h4>No projects available yet</h4>
+                    <p>Our portfolio is being updated. Check back soon!</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="text-center mt-5" data-aos="fade-up">
+            <a href="{% url 'projects' %}" class="btn btn-primary btn-lg">View All Projects</a>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5 cta-section position-relative">
+    <div class="cta-overlay"></div>
+    <div class="container text-center position-relative">
+        <div class="row justify-content-center">
+            <div class="col-lg-8" data-aos="fade-up">
+                <div class="cta-content">
+                    <h2 class="mb-4 display-4 fw-bold">Ready to Transform Your Ideas into Reality?</h2>
+                    <p class="lead mb-4">Let's collaborate to create something extraordinary. Our team is ready to bring your vision to life.</p>
+                    <a href="{% url 'contact' %}" class="btn btn-primary btn-lg">Start Your Project</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+    /* Hero Section Enhancements */
+    .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        background-size: 400% 400%;
+    }
+    
+    /* Improved Heading Animation */
+    .animated-heading {
+        display: block;
+        font-weight: 800;
+        background: linear-gradient(-45deg, #fff, var(--bright-teal), #fff, var(--deep-sea));
+        background-size: 300% 300%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: gradient-animation 5s ease infinite;
+        margin-bottom: 0.5rem;
+        text-shadow: 0 0 20px rgba(22, 199, 154, 0.5);
+    }
+    
+    @keyframes gradient-animation {
+        0% { background-position: 0% 50% }
+        50% { background-position: 100% 50% }
+        100% { background-position: 0% 50% }
+    }
+    
+    .sliding-text-container {
+        font-size: 0.8em;
+        height: 1.5em;
+        overflow: hidden;
+        position: relative;
+    }
+    
+    .typed-text, .typed-cursor {
+        background: linear-gradient(90deg, var(--bright-teal), #fff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-weight: 700;
+    }
+    
+    .typed-cursor {
+        animation: blink 0.7s infinite;
+    }
+    
+    .hero-subtitle {
+        backdrop-filter: blur(5px);
+        background: rgba(0,0,0,0.1);
+        padding: 15px;
+        border-radius: 10px;
+        border-left: 3px solid var(--bright-teal);
+    }
+    
+    .hero-image-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 400px;
+    }
+    
+    .tech-circle {
+        position: absolute;
+        border-radius: 50%;
+        background: rgba(22, 199, 154, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(22, 199, 154, 0.2);
+        box-shadow: 0 0 20px rgba(22, 199, 154, 0.2);
+        transition: all 0.3s ease;
+    }
+    
+    .tech-circle-1 {
+        width: 280px;
+        height: 280px;
+        animation: float 6s ease-in-out infinite;
+    }
+    
+    .tech-circle-2 {
+        width: 220px;
+        height: 220px;
+        background: rgba(22, 199, 154, 0.15);
+        animation: float 4s ease-in-out infinite;
+        animation-delay: 1s;
+    }
+    
+    .tech-circle-3 {
+        width: 160px;
+        height: 160px;
+        background: rgba(22, 199, 154, 0.2);
+        animation: float 5s ease-in-out infinite;
+        animation-delay: 0.5s;
+    }
+    
+    /* New Innovation Graphic */
+    .innovation-graphic {
+        position: relative;
+        z-index: 5;
+    }
+    
+    .innovation-icon-container {
+        position: relative;
+        z-index: 2;
+    }
+    
+    .main-icon {
+        font-size: 7rem;
+        color: var(--bright-teal);
+        animation: glowPulse 3s infinite;
+        position: relative;
+        z-index: 2;
+    }
+    
+    .floating-icon {
+        position: absolute;
+        color: white;
+        background: var(--gradient-primary);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 15px rgba(22, 199, 154, 0.5);
+        animation: floatAround 10s infinite ease-in-out;
+    }
+    
+    .floating-icon-1 {
+        top: -30px;
+        right: 20px;
+        font-size: 1.8rem;
+        width: 50px;
+        height: 50px;
+        animation-delay: 0s;
+    }
+    
+    .floating-icon-2 {
+        bottom: 10px;
+        left: -20px;
+        font-size: 1.5rem;
+        width: 40px;
+        height: 40px;
+        animation-delay: 1s;
+    }
+    
+    .floating-icon-3 {
+        top: 10px;
+        left: 10px;
+        font-size: 1.2rem;
+        width: 35px;
+        height: 35px;
+        animation-delay: 2s;
+    }
+    
+    .floating-icon-4 {
+        bottom: -20px;
+        right: 0;
+        font-size: 1.4rem;
+        width: 45px;
+        height: 45px;
+        animation-delay: 3s;
+    }
+    
+    .floating-icon-5 {
+        top: 40px;
+        right: -15px;
+        font-size: 1.2rem;
+        width: 35px;
+        height: 35px;
+        animation-delay: 4s;
+    }
+    
+    .innovation-glow {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 200px;
+        height: 200px;
+        background: radial-gradient(circle, rgba(22, 199, 154, 0.4) 0%, rgba(22, 199, 154, 0.1) 40%, rgba(22, 199, 154, 0) 70%);
+        border-radius: 50%;
+        z-index: 1;
+        animation: pulse 4s infinite ease-in-out;
+    }
+    
+    @keyframes floatAround {
+        0%, 100% {
+            transform: translate(0, 0) rotate(0deg);
+        }
+        25% {
+            transform: translate(10px, -10px) rotate(10deg);
+        }
+        50% {
+            transform: translate(5px, 5px) rotate(-5deg);
+        }
+        75% {
+            transform: translate(-10px, 10px) rotate(10deg);
+        }
+    }
+    
+    @keyframes glowPulse {
+        0% { text-shadow: 0 0 5px rgba(22, 199, 154, 0.5); }
+        50% { text-shadow: 0 0 20px rgba(22, 199, 154, 0.8), 0 0 30px rgba(22, 199, 154, 0.6); }
+        100% { text-shadow: 0 0 5px rgba(22, 199, 154, 0.5); }
+    }
+    
+    /* About Section */
+    .about-icon-box {
+        width: 60px;
+        height: 60px;
+        min-width: 60px;
+        border-radius: 15px;
+        background: var(--gradient-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.5rem;
+        transition: all 0.3s ease;
+    }
+    
+    /* Features Section */
+    .feature-card {
+        transition: all 0.5s ease;
+        border: none;
+        border-radius: var(--border-radius-md);
+        overflow: hidden;
+    }
+    
+    .feature-card:hover {
+        transform: translateY(-15px);
+    }
+    
+    .feature-icon {
+        width: 70px;
+        height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        color: white;
+        background: var(--gradient-primary);
+        border-radius: 20px;
+        margin-bottom: 1.5rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 20px rgba(19, 138, 114, 0.2);
+    }
+    
+    .feature-card:hover .feature-icon {
+        box-shadow: var(--neon-glow);
+        transform: rotateY(360deg);
+        transition: transform 1s ease, box-shadow 0.3s ease;
+    }
+    
+    /* CTA Section */
+    .cta-section {
+        background: linear-gradient(135deg, var(--jet-black) 0%, var(--dark-charcoal) 100%);
+        color: white;
+        padding: 6rem 0;
+        overflow: hidden;
+    }
+    
+    .cta-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="none" width="100" height="100"/><path d="M0,0L100,100" stroke="rgba(22, 199, 154, 0.1)" stroke-width="0.5"/><path d="M100,0L0,100" stroke="rgba(22, 199, 154, 0.1)" stroke-width="0.5"/></svg>');
+        opacity: 0.2;
+    }
+    
+    .cta-content {
+        position: relative;
+        z-index: 10;
+        background: rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+        padding: 3rem;
+        border-radius: 20px;
+        border: 1px solid rgba(22, 199, 154, 0.1);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    }
+    
+    .cta-content .btn {
+        margin-top: 1rem;
+        animation: pulse 2s infinite;
+    }
+    
+    .empty-projects-container {
+        background: var(--card-bg);
+        padding: 3rem;
+        border-radius: var(--border-radius-md);
+        box-shadow: var(--card-shadow);
+        text-align: center;
+    }
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize Typed.js
+    if (typeof Typed !== 'undefined') {
+        new Typed('.typed-text', {
+            strings: ["Digital Solutions", "Web Applications", "Mobile Apps", "User Experiences"],
+            typeSpeed: 60,
+            backSpeed: 40,
+            backDelay: 2000,
+            loop: true,
+            showCursor: true,
+            cursorChar: '|'
+        });
+    }
+});
+</script>
+{% endblock %}

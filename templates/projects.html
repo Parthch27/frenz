@@ -1,0 +1,264 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<!-- Projects Header -->
+<section class="projects-hero animated-gradient">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center hero-content">
+                <h1 class="hero-title display-4" data-aos="fade-up">Our Projects</h1>
+                <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="200">Explore our portfolio of successful projects across various industries and technologies.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Grid -->
+<section class="py-5 projects-section">
+    <div class="container">
+        <div class="row g-4">
+            {% for project in projects %}
+            <div class="col-md-6 col-lg-4 project-item" data-aos="fade-up" data-aos-delay="{{ forloop.counter|add:'100' }}">
+                <div class="card project-card h-100">
+                    {% if project.image %}
+                    <div class="project-image-container">
+                        <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }}">
+                    </div>
+                    {% else %}
+                    <div class="project-placeholder">
+                        <i class="fas fa-code fa-3x"></i>
+                    </div>
+                    {% endif %}
+                    <div class="card-body p-4">
+                        <h3 class="card-title project-title">{{ project.title }}</h3>
+                        <p class="card-text project-description">{{ project.description|truncatewords:20 }}</p>
+                        
+                        <div class="mb-3 project-tech">
+                            {% for tech in project.get_technologies_list %}
+                            <span class="tech-badge">{{ tech }}</span>
+                            {% endfor %}
+                        </div>
+                        
+                        <div class="d-flex gap-2 mt-3">
+                            <a href="{% url 'project_detail' project.slug %}" class="btn-project-details">
+                                View Details <i class="fas fa-arrow-right ms-2"></i>
+                            </a>
+                            {% if project.project_url %}
+                            <a href="{{ project.project_url }}" class="btn btn-primary" target="_blank">
+                                <i class="fas fa-external-link-alt me-1"></i> Live Demo
+                            </a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="col-12 text-center py-5">
+                <div class="empty-projects-container">
+                    <i class="fas fa-folder-open fa-4x mb-3" style="color: var(--bright-teal);"></i>
+                    <h3 class="mt-3">No Projects Yet</h3>
+                    <p>We're working on adding our projects. Please check back soon!</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-5 cta-section position-relative">
+    <div class="cta-overlay"></div>
+    <div class="container text-center position-relative">
+        <div class="row justify-content-center">
+            <div class="col-lg-8" data-aos="fade-up">
+                <div class="cta-content">
+                    <h2 class="mb-4">Have a project in mind?</h2>
+                    <p class="lead mb-4">Let's discuss how we can help bring your vision to life.</p>
+                    <a href="{% url 'contact' %}" class="btn btn-primary btn-lg">Contact Us</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Projects Page Specific Styles */
+.projects-hero {
+    padding-top: 180px;
+    padding-bottom: 100px;
+    background: linear-gradient(135deg, var(--jet-black), var(--dark-charcoal));
+    position: relative;
+    overflow: hidden;
+}
+
+.projects-section {
+    background-color: var(--bg-primary);
+    position: relative;
+}
+
+.project-card {
+    background: var(--card-bg);
+    border: none;
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+    transition: var(--transition);
+    box-shadow: var(--card-shadow);
+}
+
+.project-card:hover {
+    transform: translateY(-15px);
+    box-shadow: var(--neon-glow);
+}
+
+.project-image-container {
+    height: 220px;
+    overflow: hidden;
+}
+
+.card-img-top {
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+}
+
+.project-card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+.project-placeholder {
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.05);
+    color: var(--bright-teal);
+}
+
+[data-theme="dark"] .project-placeholder {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.project-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--text-heading);
+}
+
+.project-description {
+    color: var(--text-body);
+    margin-bottom: 20px;
+}
+
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.tech-badge {
+    background: rgba(22, 199, 154, 0.1);
+    color: var(--bright-teal);
+    padding: 4px 10px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 500;
+}
+
+.btn-project-details {
+    color: var(--bright-teal);
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    transition: var(--transition);
+    padding: 8px 15px;
+    border-radius: 4px;
+    background: rgba(22, 199, 154, 0.1);
+}
+
+.btn-project-details:hover {
+    color: var(--deep-sea);
+    background: rgba(22, 199, 154, 0.2);
+}
+
+.btn-project-details i {
+    transition: var(--transition);
+}
+
+.btn-project-details:hover i {
+    transform: translateX(5px);
+}
+
+.empty-projects-container {
+    background: var(--card-bg);
+    padding: 4rem 2rem;
+    border-radius: var(--border-radius-md);
+    border: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.empty-projects-container h3 {
+    color: var(--text-heading);
+    margin-bottom: 1rem;
+}
+
+.empty-projects-container p {
+    color: var(--text-body);
+}
+
+/* CTA Section */
+.cta-section {
+    background: var(--gradient-dark);
+    color: white;
+    padding: 6rem 0;
+    overflow: hidden;
+}
+
+.cta-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="none" width="100" height="100"/><path d="M0,0L100,100" stroke="rgba(22, 199, 154, 0.1)" stroke-width="0.5"/><path d="M100,0L0,100" stroke="rgba(22, 199, 154, 0.1)" stroke-width="0.5"/></svg>');
+    opacity: 0.2;
+}
+
+.cta-content {
+    position: relative;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    padding: 3rem;
+    border-radius: 20px;
+    border: 1px solid rgba(22, 199, 154, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.cta-content h2 {
+    color: white;
+}
+
+.cta-content p {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Responsive Styles */
+@media (max-width: 767px) {
+    .projects-hero {
+        padding-top: 150px;
+        padding-bottom: 70px;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .project-image-container {
+        height: 180px;
+    }
+}
+</style>
+{% endblock %}
