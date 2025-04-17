@@ -17,7 +17,15 @@ SECRET_KEY = 'django-insecure-j5h3d2s8f7g6a9sdf8g7h6j5k4l3h2g1f2d3s4a5f6g7h8j9k'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', 'd4a77527-2101-47be-ab0d-34c55765613f-00-uey51wqo8hak.picard.replit.dev', '.replit.dev']
+ALLOWED_HOSTS = [
+    '0.0.0.0',  # For local dev servers binding to 0.0.0.0
+    'frenz-1.onrender.com',  # Your Render deployment domain
+    'localhost',  # Standard for local development
+    '127.0.0.1',  # Also for local development
+    'd4a77527-2101-47be-ab0d-34c55765613f-00-uey51wqo8hak.picard.replit.dev',  # Replit custom domain
+    '.replit.dev'  # Wildcard subdomains under replit.dev
+]
+
 
 # Application definition
 INSTALLED_APPS = [
