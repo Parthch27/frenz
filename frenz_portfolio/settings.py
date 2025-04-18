@@ -26,6 +26,9 @@ ALLOWED_HOSTS = [
     '.replit.dev'  # Wildcard subdomains under replit.dev
 ]
 
+CSRF_TRUSTED_ORIGINS = [
+    "https://frenz-1.onrender.com"
+]
 
 # Application definition
 INSTALLED_APPS = [
